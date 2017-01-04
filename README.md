@@ -11,7 +11,7 @@
 
 ```js
 const options = {
-	output: 'path/to/file.json' // it is optional
+	output: 'path/to/file.json' // it`s optional
 }
 
 postcss([ require('postcss-extract-bemclasses')(options) ])
