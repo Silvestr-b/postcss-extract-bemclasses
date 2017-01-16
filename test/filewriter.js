@@ -71,39 +71,6 @@ describe('fileWriter', () => {
 
 	})
 
-
-	describe('toFormat', () => {
-		
-		it('Если передано число 0-9, то должен возвращать соотвестствующую букву', () => {
-			expect(writer.toFormat(0)).to.be.equal('a');
-			expect(writer.toFormat(1)).to.be.equal('b');
-			expect(writer.toFormat(9)).to.be.equal('j');
-		})
-
-		it('Если передано число больше, то должен возвращать букву соотвестствующую первой цифре числа + остальную часть числа переведенную в 36-ричную систему', () => {
-			expect(writer.toFormat(12)).to.be.equal('b2');
-			expect(writer.toFormat(456)).to.be.equal('e1k');
-			expect(writer.toFormat(7864)).to.be.equal('ho0');
-		})
-
-		it('Если вторая цифра в числе - 0, то возвращает "_" + число в 36-ричной системе', () => {
-			expect(writer.toFormat(10)).to.be.equal('_a');
-			expect(writer.toFormat(400)).to.be.equal('_b4');
-			expect(writer.toFormat(6000)).to.be.equal('_4mo');
-		})
-
-		it('Все значения уникальны', () => {
-			const set = new Set();
-
-			for(let i = 0; i < 10000; i++){
-				set.add(writer.toFormat(i))
-			}
-
-			expect(set.size).to.be.equal(10000);
-		})
-
-	})
-
 })
 
 

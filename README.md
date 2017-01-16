@@ -10,11 +10,12 @@
 ## Usage
 
 ```js
+const plugin = require('postcss-extract-bemclasses').default;
 const options = {
 	output: 'path/to/file.json' // it`s optional
 }
 
-postcss([ require('postcss-extract-bemclasses')(options) ])
+postcss([ plugin(options) ])
 ```
 
 See [PostCSS] docs for examples for your environment.

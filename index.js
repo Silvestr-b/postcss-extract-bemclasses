@@ -4,7 +4,7 @@ const postcss = require('postcss');
 
 exports.fileWriter = require('./filewriter');
 
-exports.default = postcss.plugin('postcss-reverse-props', (options = {}) => {
+exports.default = postcss.plugin('postcss-extract-bemclasses', (options = {}) => {
   	const result = new Set();
   
     return root => {
